@@ -25,7 +25,6 @@ const Cinema = () => {
 				setLoading(false);
 			})
 			.catch((err) => {
-				alert(err);
 				setLoading(false);
 			});
 	};
