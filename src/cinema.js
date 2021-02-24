@@ -4,6 +4,7 @@ import API from "./utils/getApiCaller";
 import Card from "./components/card";
 import SearchBar from "./components/searchBar";
 import search from "./assets/images/search.svg";
+import loader from "./assets/images/loader.svg";
 
 const Cinema = () => {
 	const [searchQuery, setSearchQuery] = useState("");
@@ -41,7 +42,11 @@ const Cinema = () => {
 							onChange={(e) => handleChange(e)}
 						/>
 						<button className='btn' onClick={() => handleSearch()}>
-							{loading ? "loder" : <img src={search} alt='search' />}
+							{loading ? (
+								<img src={loader} alt='loader' />
+							) : (
+								<img src={search} alt='search' />
+							)}
 						</button>
 					</div>
 					<SearchBar searchQuery={searchQuery} />
